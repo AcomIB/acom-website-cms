@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_sections_hirings",
+  "info": {
+    "displayName": "Hiring",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Op zoek naar een leuke, uitdagende job?"
+    },
+    "title": {
+      "type": "string",
+      "default": "Wij zijn op zoek naar toffe collega's!"
+    },
+    "call_to_action_text": {
+      "type": "string",
+      "default": "Soliciteer nu!"
+    },
+    "call_to_action_link": {
+      "type": "string",
+      "default": "#apply-now"
+    }
+  }
+}

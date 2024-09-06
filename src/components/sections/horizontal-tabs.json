@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_horizontal_tabs",
+  "info": {
+    "displayName": "Horizontal Tabs",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.tab"
+    }
+  }
+}

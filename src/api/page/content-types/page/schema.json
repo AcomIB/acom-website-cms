@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Pages",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "handshake",
+        "headset",
+        "house",
+        "lock",
+        "server",
+        "telephone",
+        "euro",
+        "shuffle"
+      ]
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page",
+      "mappedBy": "parent"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.values",
+        "sections.tabs",
+        "sections.reviews",
+        "sections.photo-bento",
+        "sections.partners",
+        "sections.numbers",
+        "sections.news",
+        "sections.jumbo",
+        "sections.hiring",
+        "sections.grid",
+        "sections.features",
+        "sections.detail-cta",
+        "sections.detail-cta-image",
+        "sections.contact",
+        "sections.clients",
+        "sections.horizontal-tabs",
+        "sections.skewed-jumbo"
+      ]
+    },
+    "hideFromNavigation": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "scrollSpy": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_ui_reviews",
+  "info": {
+    "displayName": "Review",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "publicationDate": {
+      "type": "date"
+    },
+    "name": {
+      "type": "string",
+      "default": "John Doe"
+    },
+    "review": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "decimal",
+      "default": 5
+    }
+  }
+}

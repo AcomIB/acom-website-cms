@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_numbers",
+  "info": {
+    "displayName": "Number",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "regex": "^\\d+(\\+)?$",
+      "required": true
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

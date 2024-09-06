@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_photo_bentos",
+  "info": {
+    "displayName": "PhotoBento",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "pictures": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

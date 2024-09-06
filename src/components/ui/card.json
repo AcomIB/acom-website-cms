@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_ui_cards",
+  "info": {
+    "displayName": "Card",
+    "icon": "puzzle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "link": {
+      "type": "string"
+    },
+    "read_more_url": {
+      "type": "string"
+    },
+    "read_more_label": {
+      "type": "string"
+    },
+    "background_image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "foreground_image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

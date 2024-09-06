@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_detail_cta_images",
+  "info": {
+    "displayName": "DetailCtaImage",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "blocks"
+    },
+    "call_to_action_text": {
+      "type": "string"
+    },
+    "call_to_action_link": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imageOnTheRight": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

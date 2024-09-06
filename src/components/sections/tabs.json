@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_tabs",
+  "info": {
+    "displayName": "Tabs"
+  },
+  "options": {},
+  "attributes": {
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.tab"
+    }
+  }
+}

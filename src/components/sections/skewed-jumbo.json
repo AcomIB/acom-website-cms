@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_skewed_jumbos",
+  "info": {
+    "displayName": "Skewed Jumbo",
+    "icon": "crop"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

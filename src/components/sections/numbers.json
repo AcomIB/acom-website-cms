@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_numbers",
+  "info": {
+    "displayName": "Numbers",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "numbers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.number"
+    }
+  }
+}

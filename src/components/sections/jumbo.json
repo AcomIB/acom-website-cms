@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_jumbos",
+  "info": {
+    "displayName": "Jumbo",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Uw IT in "
+    },
+    "title_emphasis": {
+      "type": "string",
+      "default": "vertrouwde handen"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

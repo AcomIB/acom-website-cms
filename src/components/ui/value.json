@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_ui_values",
+  "info": {
+    "displayName": "Value",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "C",
+        "O",
+        "M"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

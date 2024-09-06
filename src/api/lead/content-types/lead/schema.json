@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leads",
+  "info": {
+    "singularName": "lead",
+    "pluralName": "leads",
+    "displayName": "Lead",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.values",
+        "sections.tabs",
+        "sections.reviews",
+        "sections.photo-bento",
+        "sections.partners",
+        "sections.numbers",
+        "sections.news",
+        "sections.jumbo",
+        "sections.hiring",
+        "sections.grid",
+        "sections.features",
+        "sections.detail-cta",
+        "sections.detail-cta-image",
+        "sections.contact",
+        "sections.clients",
+        "sections.horizontal-tabs",
+        "sections.skewed-jumbo"
+      ]
+    }
+  }
+}

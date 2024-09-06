@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_news",
+  "info": {
+    "displayName": "News",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.card"
+    }
+  }
+}

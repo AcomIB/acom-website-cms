@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_ui_cells",
+  "info": {
+    "displayName": "Cell",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

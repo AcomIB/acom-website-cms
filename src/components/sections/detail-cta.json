@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sections_detail_ctas",
+  "info": {
+    "displayName": "DetailCta",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "title_emphasis": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "blocks"
+    },
+    "call_to_action_text": {
+      "type": "string"
+    },
+    "call_to_action_link": {
+      "type": "string"
+    }
+  }
+}

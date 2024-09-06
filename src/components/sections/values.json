@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_values",
+  "info": {
+    "displayName": "Values",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.value"
+    }
+  }
+}

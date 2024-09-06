@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_ui_tabs",
+  "info": {
+    "displayName": "Tab",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tabTitle": {
+      "type": "string",
+      "default": "voordelig"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "handshake",
+        "headset",
+        "house",
+        "lock",
+        "server",
+        "telephone",
+        "euro",
+        "shuffle"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "default": "Kies voor Microsoft Azure en vermijd grote investeringen."
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "subtitle"
+    },
+    "paragraph": {
+      "type": "blocks"
+    }
+  }
+}

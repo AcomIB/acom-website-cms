@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_clients",
+  "info": {
+    "displayName": "Clients",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Onze cliënten"
+    },
+    "read_more_title": {
+      "type": "string",
+      "default": "Meer cases"
+    },
+    "clients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.card"
+    }
+  }
+}

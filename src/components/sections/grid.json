@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_grids",
+  "info": {
+    "displayName": "Grid",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.cell"
+    }
+  }
+}
