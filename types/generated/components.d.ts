@@ -1,348 +1,366 @@
-import type { Struct, Schema } from "@strapi/strapi";
+import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface UiValue extends Struct.ComponentSchema {
-  collectionName: "components_ui_values";
+export interface UiValue extends Schema.Component {
+  collectionName: 'components_ui_values';
   info: {
-    displayName: "Value";
-    icon: "code";
-    description: "";
+    displayName: 'Value';
+    icon: 'code';
+    description: '';
   };
   attributes: {
-    color: Schema.Attribute.String;
-    icon: Schema.Attribute.Enumeration;
-    title: Schema.Attribute.String;
-    description: Schema.Attribute.Blocks;
+    color: Attribute.String;
+    icon: Attribute.Enumeration<['A', 'C', 'O', 'M']>;
+    title: Attribute.String;
+    description: Attribute.Blocks;
   };
 }
 
-export interface UiTab extends Struct.ComponentSchema {
-  collectionName: "components_ui_tabs";
+export interface UiTab extends Schema.Component {
+  collectionName: 'components_ui_tabs';
   info: {
-    displayName: "Tab";
-    description: "";
+    displayName: 'Tab';
+    description: '';
   };
   attributes: {
-    tabTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    icon: Schema.Attribute.Enumeration;
-    title: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    subtitle: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    paragraph: Schema.Attribute.Blocks;
+    tabTitle: Attribute.String & Attribute.DefaultTo<'voordelig'>;
+    icon: Attribute.Enumeration<
+      [
+        'handshake',
+        'headset',
+        'house',
+        'lock',
+        'server',
+        'telephone',
+        'euro',
+        'shuffle'
+      ]
+    >;
+    title: Attribute.String &
+      Attribute.DefaultTo<'Kies voor Microsoft Azure en vermijd grote investeringen.'>;
+    subtitle: Attribute.String & Attribute.DefaultTo<'subtitle'>;
+    paragraph: Attribute.Blocks;
   };
 }
 
-export interface UiReview extends Struct.ComponentSchema {
-  collectionName: "components_ui_reviews";
+export interface UiReview extends Schema.Component {
+  collectionName: 'components_ui_reviews';
   info: {
-    displayName: "Review";
-    icon: "quote";
+    displayName: 'Review';
+    icon: 'quote';
   };
   attributes: {
-    publicationDate: Schema.Attribute.Date;
-    name: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    review: Schema.Attribute.Text;
-    rating: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo;
+    publicationDate: Attribute.Date;
+    name: Attribute.String & Attribute.DefaultTo<'John Doe'>;
+    review: Attribute.Text;
+    rating: Attribute.Decimal & Attribute.DefaultTo<5>;
   };
 }
 
-export interface UiNumber extends Struct.ComponentSchema {
-  collectionName: "components_ui_numbers";
+export interface UiNumber extends Schema.Component {
+  collectionName: 'components_ui_numbers';
   info: {
-    displayName: "Number";
-    icon: "chartCircle";
+    displayName: 'Number';
+    icon: 'chartCircle';
   };
   attributes: {
-    number: Schema.Attribute.String & Schema.Attribute.Required;
-    label: Schema.Attribute.String;
+    number: Attribute.String & Attribute.Required;
+    label: Attribute.String;
   };
 }
 
-export interface UiFeature extends Struct.ComponentSchema {
-  collectionName: "components_sections_feature";
+export interface UiFeature extends Schema.Component {
+  collectionName: 'components_sections_feature';
   info: {
-    displayName: "Feature";
-    icon: "brush";
-    description: "";
+    displayName: 'Feature';
+    icon: 'brush';
+    description: '';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    href: Schema.Attribute.String;
-    icon: Schema.Attribute.Enumeration;
-    title: Schema.Attribute.String;
+    description: Attribute.Text;
+    href: Attribute.String;
+    icon: Attribute.Enumeration<
+      ['handshake', 'headset', 'house', 'lock', 'server', 'telephone']
+    >;
+    title: Attribute.String;
   };
 }
 
-export interface UiCell extends Struct.ComponentSchema {
-  collectionName: "components_ui_cells";
+export interface UiCell extends Schema.Component {
+  collectionName: 'components_ui_cells';
   info: {
-    displayName: "Cell";
-    icon: "apps";
+    displayName: 'Cell';
+    icon: 'apps';
   };
   attributes: {
-    content: Schema.Attribute.Blocks;
+    content: Attribute.Blocks;
   };
 }
 
-export interface UiCard extends Struct.ComponentSchema {
-  collectionName: "components_ui_cards";
+export interface UiCard extends Schema.Component {
+  collectionName: 'components_ui_cards';
   info: {
-    displayName: "Card";
-    icon: "puzzle";
-    description: "";
+    displayName: 'Card';
+    icon: 'puzzle';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    description: Schema.Attribute.Blocks;
-    link: Schema.Attribute.String;
-    read_more_url: Schema.Attribute.String;
-    read_more_label: Schema.Attribute.String;
-    background_image: Schema.Attribute.Media;
-    foreground_image: Schema.Attribute.Media;
+    title: Attribute.String;
+    description: Attribute.Blocks;
+    link: Attribute.String;
+    read_more_url: Attribute.String;
+    read_more_label: Attribute.String;
+    background_image: Attribute.Media<'images' | 'files'>;
+    foreground_image: Attribute.Media<'images' | 'files'>;
   };
 }
 
-export interface SectionsValues extends Struct.ComponentSchema {
-  collectionName: "components_sections_values";
+export interface SectionsValues extends Schema.Component {
+  collectionName: 'components_sections_values';
   info: {
-    displayName: "Values";
-    icon: "dashboard";
-    description: "";
+    displayName: 'Values';
+    icon: 'dashboard';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    values: Schema.Attribute.Component;
+    title: Attribute.String;
+    values: Attribute.Component<'ui.value', true>;
   };
 }
 
-export interface SectionsTabs extends Struct.ComponentSchema {
-  collectionName: "components_sections_tabs";
+export interface SectionsTabs extends Schema.Component {
+  collectionName: 'components_sections_tabs';
   info: {
-    displayName: "Tabs";
+    displayName: 'Tabs';
   };
   attributes: {
-    tabs: Schema.Attribute.Component;
+    tabs: Attribute.Component<'ui.tab', true>;
   };
 }
 
-export interface SectionsSkewedJumbo extends Struct.ComponentSchema {
-  collectionName: "components_sections_skewed_jumbos";
+export interface SectionsSkewedJumbo extends Schema.Component {
+  collectionName: 'components_sections_skewed_jumbos';
   info: {
-    displayName: "Skewed Jumbo";
-    icon: "crop";
+    displayName: 'Skewed Jumbo';
+    icon: 'crop';
   };
   attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.Blocks & Attribute.Required;
   };
 }
 
-export interface SectionsReviews extends Struct.ComponentSchema {
-  collectionName: "components_sections_reviews";
+export interface SectionsReviews extends Schema.Component {
+  collectionName: 'components_sections_reviews';
   info: {
-    displayName: "Reviews";
-    icon: "message";
+    displayName: 'Reviews';
+    icon: 'message';
   };
   attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    reviews: Schema.Attribute.Component;
+    title: Attribute.String & Attribute.DefaultTo<'acom reviews.'>;
+    reviews: Attribute.Component<'ui.review', true>;
   };
 }
 
-export interface SectionsPhotoBento extends Struct.ComponentSchema {
-  collectionName: "components_sections_photo_bentos";
+export interface SectionsPhotoBento extends Schema.Component {
+  collectionName: 'components_sections_photo_bentos';
   info: {
-    displayName: "PhotoBento";
-    icon: "picture";
+    displayName: 'PhotoBento';
+    icon: 'picture';
   };
   attributes: {
-    pictures: Schema.Attribute.Media;
+    pictures: Attribute.Media<'images' | 'files', true>;
   };
 }
 
-export interface SectionsPartners extends Struct.ComponentSchema {
-  collectionName: "components_sections_partners";
+export interface SectionsPartners extends Schema.Component {
+  collectionName: 'components_sections_partners';
   info: {
-    displayName: "Partners";
-    icon: "apps";
-    description: "";
+    displayName: 'Partners';
+    icon: 'apps';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    partners: Schema.Attribute.Media;
+    title: Attribute.String;
+    partners: Attribute.Media<'files' | 'images', true>;
   };
 }
 
-export interface SectionsNumbers extends Struct.ComponentSchema {
-  collectionName: "components_sections_numbers";
+export interface SectionsNumbers extends Schema.Component {
+  collectionName: 'components_sections_numbers';
   info: {
-    displayName: "Numbers";
-    icon: "chartCircle";
+    displayName: 'Numbers';
+    icon: 'chartCircle';
   };
   attributes: {
-    numbers: Schema.Attribute.Component;
+    numbers: Attribute.Component<'ui.number', true>;
   };
 }
 
-export interface SectionsNews extends Struct.ComponentSchema {
-  collectionName: "components_sections_news";
+export interface SectionsNews extends Schema.Component {
+  collectionName: 'components_sections_news';
   info: {
-    displayName: "News";
-    icon: "envelop";
+    displayName: 'News';
+    icon: 'envelop';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    articles: Schema.Attribute.Component;
+    title: Attribute.String;
+    articles: Attribute.Component<'ui.card', true>;
   };
 }
 
-export interface SectionsJumbo extends Struct.ComponentSchema {
-  collectionName: "components_sections_jumbos";
+export interface SectionsJumbo extends Schema.Component {
+  collectionName: 'components_sections_jumbos';
   info: {
-    displayName: "Jumbo";
-    icon: "chartBubble";
-    description: "";
+    displayName: 'Jumbo';
+    icon: 'chartBubble';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    title_emphasis: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    image: Schema.Attribute.Media;
+    title: Attribute.String & Attribute.DefaultTo<'Uw IT in '>;
+    title_emphasis: Attribute.String & Attribute.DefaultTo<'vertrouwde handen'>;
+    image: Attribute.Media<'images' | 'files'>;
   };
 }
 
-export interface SectionsHorizontalTabs extends Struct.ComponentSchema {
-  collectionName: "components_sections_horizontal_tabs";
+export interface SectionsHorizontalTabs extends Schema.Component {
+  collectionName: 'components_sections_horizontal_tabs';
   info: {
-    displayName: "Horizontal Tabs";
-    icon: "apps";
+    displayName: 'Horizontal Tabs';
+    icon: 'apps';
   };
   attributes: {
-    tabs: Schema.Attribute.Component;
+    tabs: Attribute.Component<'ui.tab', true>;
   };
 }
 
-export interface SectionsHiring extends Struct.ComponentSchema {
-  collectionName: "components_sections_hirings";
+export interface SectionsHiring extends Schema.Component {
+  collectionName: 'components_sections_hirings';
   info: {
-    displayName: "Hiring";
-    icon: "user";
+    displayName: 'Hiring';
+    icon: 'user';
   };
   attributes: {
-    image: Schema.Attribute.Media;
-    subtitle: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    title: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    call_to_action_text: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    call_to_action_link: Schema.Attribute.String & Schema.Attribute.DefaultTo;
+    image: Attribute.Media<'images' | 'files'>;
+    subtitle: Attribute.String &
+      Attribute.DefaultTo<'Op zoek naar een leuke, uitdagende job?'>;
+    title: Attribute.String &
+      Attribute.DefaultTo<"Wij zijn op zoek naar toffe collega's!">;
+    call_to_action_text: Attribute.String &
+      Attribute.DefaultTo<'Soliciteer nu!'>;
+    call_to_action_link: Attribute.String & Attribute.DefaultTo<'#apply-now'>;
   };
 }
 
-export interface SectionsGrid extends Struct.ComponentSchema {
-  collectionName: "components_sections_grids";
+export interface SectionsGrid extends Schema.Component {
+  collectionName: 'components_sections_grids';
   info: {
-    displayName: "Grid";
-    icon: "apps";
+    displayName: 'Grid';
+    icon: 'apps';
   };
   attributes: {
-    columns: Schema.Attribute.Component;
+    columns: Attribute.Component<'ui.cell', true>;
   };
 }
 
-export interface SectionsFeatures extends Struct.ComponentSchema {
-  collectionName: "components_sections_features";
+export interface SectionsFeatures extends Schema.Component {
+  collectionName: 'components_sections_features';
   info: {
-    displayName: "Features";
-    description: "";
+    displayName: 'Features';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    features: Schema.Attribute.Component;
+    title: Attribute.Blocks & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
+    features: Attribute.Component<'ui.feature', true>;
   };
 }
 
-export interface SectionsDetailCta extends Struct.ComponentSchema {
-  collectionName: "components_sections_detail_ctas";
+export interface SectionsDetailCta extends Schema.Component {
+  collectionName: 'components_sections_detail_ctas';
   info: {
-    displayName: "DetailCta";
-    icon: "cursor";
-    description: "";
+    displayName: 'DetailCta';
+    icon: 'cursor';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    title_emphasis: Schema.Attribute.String;
-    paragraph: Schema.Attribute.Blocks;
-    call_to_action_text: Schema.Attribute.String;
-    call_to_action_link: Schema.Attribute.String;
+    title: Attribute.String;
+    title_emphasis: Attribute.String;
+    paragraph: Attribute.Blocks;
+    call_to_action_text: Attribute.String;
+    call_to_action_link: Attribute.String;
   };
 }
 
-export interface SectionsDetailCtaImage extends Struct.ComponentSchema {
-  collectionName: "components_sections_detail_cta_images";
+export interface SectionsDetailCtaImage extends Schema.Component {
+  collectionName: 'components_sections_detail_cta_images';
   info: {
-    displayName: "DetailCtaImage";
-    icon: "cursor";
-    description: "";
+    displayName: 'DetailCtaImage';
+    icon: 'cursor';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    paragraph: Schema.Attribute.Blocks;
-    call_to_action_text: Schema.Attribute.String;
-    call_to_action_link: Schema.Attribute.String;
-    image: Schema.Attribute.Media;
-    imageOnTheRight: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo;
+    title: Attribute.String;
+    paragraph: Attribute.Blocks;
+    call_to_action_text: Attribute.String;
+    call_to_action_link: Attribute.String;
+    image: Attribute.Media<'images' | 'files'>;
+    imageOnTheRight: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
-export interface SectionsContact extends Struct.ComponentSchema {
-  collectionName: "components_sections_contacts";
+export interface SectionsContact extends Schema.Component {
+  collectionName: 'components_sections_contacts';
   info: {
-    displayName: "Contact";
-    icon: "envelop";
+    displayName: 'Contact';
+    icon: 'envelop';
   };
   attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.DefaultTo;
+    title: Attribute.String &
+      Attribute.DefaultTo<'Op zoek naar IT-ondersteuning?'>;
   };
 }
 
-export interface SectionsClients extends Struct.ComponentSchema {
-  collectionName: "components_sections_clients";
+export interface SectionsClients extends Schema.Component {
+  collectionName: 'components_sections_clients';
   info: {
-    displayName: "Clients";
-    icon: "user";
-    description: "";
+    displayName: 'Clients';
+    icon: 'user';
+    description: '';
   };
   attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    read_more_title: Schema.Attribute.String & Schema.Attribute.DefaultTo;
-    clients: Schema.Attribute.Component;
+    title: Attribute.String & Attribute.DefaultTo<'Onze cli\u00EBnten'>;
+    read_more_title: Attribute.String & Attribute.DefaultTo<'Meer cases'>;
+    clients: Attribute.Component<'ui.card', true>;
   };
 }
 
-declare module "@strapi/strapi" {
-  export module Public {
-    export interface ComponentSchemas {
-      "ui.value": UiValue;
-      "ui.tab": UiTab;
-      "ui.review": UiReview;
-      "ui.number": UiNumber;
-      "ui.feature": UiFeature;
-      "ui.cell": UiCell;
-      "ui.card": UiCard;
-      "sections.values": SectionsValues;
-      "sections.tabs": SectionsTabs;
-      "sections.skewed-jumbo": SectionsSkewedJumbo;
-      "sections.reviews": SectionsReviews;
-      "sections.photo-bento": SectionsPhotoBento;
-      "sections.partners": SectionsPartners;
-      "sections.numbers": SectionsNumbers;
-      "sections.news": SectionsNews;
-      "sections.jumbo": SectionsJumbo;
-      "sections.horizontal-tabs": SectionsHorizontalTabs;
-      "sections.hiring": SectionsHiring;
-      "sections.grid": SectionsGrid;
-      "sections.features": SectionsFeatures;
-      "sections.detail-cta": SectionsDetailCta;
-      "sections.detail-cta-image": SectionsDetailCtaImage;
-      "sections.contact": SectionsContact;
-      "sections.clients": SectionsClients;
+declare module '@strapi/types' {
+  export module Shared {
+    export interface Components {
+      'ui.value': UiValue;
+      'ui.tab': UiTab;
+      'ui.review': UiReview;
+      'ui.number': UiNumber;
+      'ui.feature': UiFeature;
+      'ui.cell': UiCell;
+      'ui.card': UiCard;
+      'sections.values': SectionsValues;
+      'sections.tabs': SectionsTabs;
+      'sections.skewed-jumbo': SectionsSkewedJumbo;
+      'sections.reviews': SectionsReviews;
+      'sections.photo-bento': SectionsPhotoBento;
+      'sections.partners': SectionsPartners;
+      'sections.numbers': SectionsNumbers;
+      'sections.news': SectionsNews;
+      'sections.jumbo': SectionsJumbo;
+      'sections.horizontal-tabs': SectionsHorizontalTabs;
+      'sections.hiring': SectionsHiring;
+      'sections.grid': SectionsGrid;
+      'sections.features': SectionsFeatures;
+      'sections.detail-cta': SectionsDetailCta;
+      'sections.detail-cta-image': SectionsDetailCtaImage;
+      'sections.contact': SectionsContact;
+      'sections.clients': SectionsClients;
     }
   }
 }

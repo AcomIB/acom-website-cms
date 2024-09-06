@@ -39,6 +39,16 @@
         "sections.horizontal-tabs",
         "sections.skewed-jumbo"
       ]
+    },
+    "hideFromNavigation": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "scrollSpy": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
