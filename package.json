@@ -7,7 +7,7 @@
     "@strapi/plugin-users-permissions": "4.21.1",
     "@strapi/plugin-i18n": "4.21.1",
     "@strapi/plugin-cloud": "4.21.1",
-    "@strapi/strapi": "5.0.0-rc.11",
+    "@strapi/strapi": "4.25.10",
     "better-sqlite3": "9.4.3",
     "mysql2": "^3.11.0",
     "react": "^18.0.0",
