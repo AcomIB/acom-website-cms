@@ -1,9 +1,9 @@
 {
     "dependencies": {
-    "@strapi/strapi": "5.0.0-rc.13",
-    "@strapi/email": "5.0.0-rc.13",
-    "@strapi/plugin-users-permissions": "5.0.0-rc.13",
-    "@strapi/plugin-cloud": "5.0.0-rc.13",
+    "@strapi/strapi": "5.0.0-rc.27",
+    "@strapi/email": "5.0.0-rc.27",
+    "@strapi/plugin-users-permissions": "5.0.0-rc.27",
+    "@strapi/plugin-cloud": "5.0.0-rc.27",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
