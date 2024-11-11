@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_ui_plans",
+  "info": {
+    "displayName": "Plan",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "planName": {
+      "type": "string",
+      "required": true
+    },
+    "tagline": {
+      "type": "text",
+      "required": true
+    },
+    "callToActionLabel": {
+      "type": "string",
+      "required": true
+    },
+    "callToActionLink": {
+      "type": "string",
+      "required": true
+    },
+    "isSuggestedPlan": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "priceAlternative": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "isPerYear": {
+      "type": "boolean"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.plan-feature"
+    }
+  }
+}

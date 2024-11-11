@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_pricings",
+  "info": {
+    "displayName": "Pricing",
+    "icon": "connector",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "plans": {
+      "displayName": "Plan",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.plan"
+    }
+  }
+}

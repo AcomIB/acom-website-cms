@@ -400,6 +400,7 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
         'sections.clients',
         'sections.horizontal-tabs',
         'sections.skewed-jumbo',
+        'sections.pricing',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -455,6 +456,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.clients',
         'sections.horizontal-tabs',
         'sections.skewed-jumbo',
+        'sections.pricing',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
