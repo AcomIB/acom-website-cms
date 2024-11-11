@@ -64,7 +64,8 @@
         "sections.contact",
         "sections.clients",
         "sections.horizontal-tabs",
-        "sections.skewed-jumbo"
+        "sections.skewed-jumbo",
+        "sections.pricing"
       ]
     },
     "hideFromNavigation": {

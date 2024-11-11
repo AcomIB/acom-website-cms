@@ -178,6 +178,18 @@ export interface SectionsPhotoBento extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsPricing extends Struct.ComponentSchema {
+  collectionName: 'components_sections_pricings';
+  info: {
+    description: '';
+    displayName: 'Pricing';
+    icon: 'connector';
+  };
+  attributes: {
+    plans: Schema.Attribute.Component<'ui.plan', true>;
+  };
+}
+
 export interface SectionsReviews extends Struct.ComponentSchema {
   collectionName: 'components_sections_reviews';
   info: {
@@ -284,6 +296,38 @@ export interface UiNumber extends Struct.ComponentSchema {
   };
 }
 
+export interface UiPlan extends Struct.ComponentSchema {
+  collectionName: 'components_ui_plans';
+  info: {
+    description: '';
+    displayName: 'Plan';
+  };
+  attributes: {
+    callToActionLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    callToActionLink: Schema.Attribute.String & Schema.Attribute.Required;
+    features: Schema.Attribute.Component<'ui.plan-feature', true>;
+    isPerYear: Schema.Attribute.Boolean;
+    isSuggestedPlan: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    planName: Schema.Attribute.String & Schema.Attribute.Required;
+    price: Schema.Attribute.Decimal;
+    priceAlternative: Schema.Attribute.String;
+    tagline: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface UiPlanFeature extends Struct.ComponentSchema {
+  collectionName: 'components_ui_plan_features';
+  info: {
+    description: '';
+    displayName: 'PlanFeature';
+  };
+  attributes: {
+    feature: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface UiReview extends Struct.ComponentSchema {
   collectionName: 'components_ui_reviews';
   info: {
@@ -356,6 +400,7 @@ declare module '@strapi/strapi' {
       'sections.numbers': SectionsNumbers;
       'sections.partners': SectionsPartners;
       'sections.photo-bento': SectionsPhotoBento;
+      'sections.pricing': SectionsPricing;
       'sections.reviews': SectionsReviews;
       'sections.skewed-jumbo': SectionsSkewedJumbo;
       'sections.tabs': SectionsTabs;
@@ -364,6 +409,8 @@ declare module '@strapi/strapi' {
       'ui.cell': UiCell;
       'ui.feature': UiFeature;
       'ui.number': UiNumber;
+      'ui.plan': UiPlan;
+      'ui.plan-feature': UiPlanFeature;
       'ui.review': UiReview;
       'ui.tab': UiTab;
       'ui.value': UiValue;
