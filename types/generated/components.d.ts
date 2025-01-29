@@ -124,7 +124,7 @@ export interface SectionsJumbo extends Struct.ComponentSchema {
     icon: 'chartBubble';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images' | 'files'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Uw IT in '>;
     title_emphasis: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'vertrouwde handen'>;
