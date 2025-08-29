@@ -1,5 +1,14 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SectionsBlogPostsOverview extends Struct.ComponentSchema {
+  collectionName: 'components_sections_blog_posts_overviews';
+  info: {
+    displayName: 'BlogPostsOverview';
+    icon: 'book';
+  };
+  attributes: {};
+}
+
 export interface SectionsClients extends Struct.ComponentSchema {
   collectionName: 'components_sections_clients';
   info: {
@@ -23,8 +32,15 @@ export interface SectionsContact extends Struct.ComponentSchema {
     icon: 'envelop';
   };
   attributes: {
-    title: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Op zoek naar IT-ondersteuning?'>;
+    callToActionText: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    formTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Neem contact op met ons'>;
+    includeContactDetails: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    tags: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<'plugin::tagsinput.tags'>;
   };
 }
 
@@ -124,7 +140,7 @@ export interface SectionsJumbo extends Struct.ComponentSchema {
     icon: 'chartBubble';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    images: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
     title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Uw IT in '>;
     title_emphasis: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'vertrouwde handen'>;
@@ -387,6 +403,7 @@ export interface UiValue extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'sections.blog-posts-overview': SectionsBlogPostsOverview;
       'sections.clients': SectionsClients;
       'sections.contact': SectionsContact;
       'sections.detail-cta': SectionsDetailCta;

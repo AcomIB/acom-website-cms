@@ -65,18 +65,19 @@
         "sections.clients",
         "sections.horizontal-tabs",
         "sections.skewed-jumbo",
-        "sections.pricing"
+        "sections.pricing",
+        "sections.blog-posts-overview"
       ]
     },
     "hideFromNavigation": {
       "type": "boolean",
-      "default": false,
-      "required": true
+      "required": true,
+      "default": false
     },
     "scrollSpy": {
       "type": "boolean",
-      "default": false,
-      "required": true
+      "required": true,
+      "default": false
     }
   }
 }

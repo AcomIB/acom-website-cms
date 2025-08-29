@@ -6,9 +6,23 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "formTitle": {
       "type": "string",
-      "default": "Op zoek naar IT-ondersteuning?"
+      "default": "Neem contact op met ons",
+      "required": true
+    },
+    "callToActionText": {
+      "type": "blocks",
+      "required": true
+    },
+    "includeContactDetails": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "tags": {
+      "type": "customField",
+      "customField": "plugin::tagsinput.tags"
     }
   }
 }

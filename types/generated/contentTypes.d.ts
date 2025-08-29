@@ -373,6 +373,64 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
+  collectionName: 'blog_posts';
+  info: {
+    displayName: 'BlogPost';
+    pluralName: 'blog-posts';
+    singularName: 'blog-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.DynamicZone<
+      [
+        'sections.values',
+        'sections.tabs',
+        'sections.skewed-jumbo',
+        'sections.reviews',
+        'sections.pricing',
+        'sections.photo-bento',
+        'sections.partners',
+        'sections.numbers',
+        'sections.news',
+        'sections.jumbo',
+        'sections.horizontal-tabs',
+        'sections.hiring',
+        'sections.grid',
+        'sections.features',
+        'sections.detail-cta',
+        'sections.detail-cta-image',
+        'sections.contact',
+        'sections.clients',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-post.blog-post'
+    > &
+      Schema.Attribute.Private;
+    picture: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    scrollSpy: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    shortDescription: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLeadLead extends Struct.CollectionTypeSchema {
   collectionName: 'leads';
   info: {
@@ -461,6 +519,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.horizontal-tabs',
         'sections.skewed-jumbo',
         'sections.pricing',
+        'sections.blog-posts-overview',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1006,6 +1065,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::lead.lead': ApiLeadLead;
       'api::page.page': ApiPagePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
